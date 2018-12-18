@@ -10,6 +10,8 @@ import comportamentales.EsquemaOffline;
 import comportamentales.EsquemaOnline;
 import creacional.ComprobanteElectronico;
 import creacional.ComprobantesFactory;
+import facturador.estructural.FooterDecorator;
+import facturador.estructural.LogoDecorator;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
@@ -69,6 +71,12 @@ public class Sistema {
         AutorizadorSRI sri3 = new AutorizadorSRI(new EsquemaOnline());
         sri2.autorizar(comprob3);
         System.out.println(comprob3.toString());
+        
+        System.out.println("Agregando Decorators:");
+        comprob3 = new LogoDecorator(comprob3);
+        System.out.println(comprob3);
+        comprob2 = new FooterDecorator(comprob2);
+        System.out.println(comprob2);
     }
     
 }
